@@ -1,0 +1,5 @@
+function wpse28782_remove_menu_items() {
+        remove_menu_page( 'edit.php?post_type=acf-field-group' );
+  
+}
+add_action( 'admin_menu', 'wpse28782_remove_menu_items' );
