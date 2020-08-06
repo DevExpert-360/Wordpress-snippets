@@ -19,3 +19,10 @@ $args = array(
     'include'    => $ids
 );
 $product_categories = get_terms($args);
+
+
+// another way
+$categories = get_categories( array(
+                'orderby' => 'name',
+                'order'   => 'ASC'
+            ) );
