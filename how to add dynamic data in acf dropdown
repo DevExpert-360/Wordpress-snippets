@@ -1,0 +1,28 @@
+function dynamic_author_dropdown( $field ){
+	$args = array(  
+        'post_type' => 'mahnama',
+        'post_status' => 'publish',
+        'posts_per_page' => -1, 
+        'orderby' => 'title', 
+        'order' => 'ASC',
+        'cat' => 'home',
+    );
+    $loop = get_posts( $args );
+
+        
+     
+	$authors = get_users(array(
+		'role' => 'author'
+	));
+	
+	if(!empty($authors)){
+		foreach($loop as $author){
+			$field['choices'][$author->ID] = $author->post_title;
+		}
+	}
+ 
+    return $field;
+}
+ 
+// acf/load_field/key={$field_key} - filter for a specific field based on it's key name , CHANGE THIS TO YOUR FIELDS KEY!
+add_filter('acf/load_field/name=select_mahnama', 'dynamic_author_dropdown');
