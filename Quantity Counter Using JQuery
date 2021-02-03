@@ -1,0 +1,30 @@
+<script>
+    $('.decrease').click(function(){
+      console.log('decrease clicked..');
+      let val=$(this).next().val();
+      if(eval(val)>1){
+      $(this).next().val(eval(val)-1);
+      }
+      console.log(val);
+    });
+    $('.increase').click(function(){
+      console.log('increase clicked..');
+      let val2=$(this).prev().val();
+      
+      $(this).prev().val(eval(val2)+1);
+      
+      console.log(val2);
+    });
+// let decrease_val = document.querySelectorAll('.decrease');
+//   decrease_val.forEach(function(e){
+//   	e.addEventListener("click", function(){
+//   	alert('hello');
+// })
+//   });
+
+</script>
+<div class="vaival-form">
+    <div class="value-button decrease"    value="Decrease Value">-</div>
+    <input min="1" type="number" id="quantity"  class="quantity_input" name="quantity" value="1"  />
+    <div class="value-button increase"   value="Increase Value">+  </div>
+</div>
