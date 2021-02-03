@@ -23,6 +23,42 @@
 //   });
 
 </script>
+<style>
+  
+ .decrease {
+    width: 30.6666%;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    background-color: #ececec;
+    padding: 10px 5px;
+}
+
+.vaival-form input {
+    width: 30.6666%;
+    float: left;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.increase {
+    width: 30.6666%;
+    float: left;
+    font-size: 18px;
+    padding: 10px 5px;
+    background-color: #ececec;
+}
+  @media only screen and (max-width: 650px) {
+  .vaival-form input {
+/*     width: 30.6666%;
+    float: left;
+    text-align: center; */
+    margin-left: 0; 
+    margin-right: 0;
+}
+}
+  </style>
 <div class="vaival-form">
     <div class="value-button decrease"    value="Decrease Value">-</div>
     <input min="1" type="number" id="quantity"  class="quantity_input" name="quantity" value="1"  />
