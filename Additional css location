@@ -1,0 +1,27 @@
+add_action('customize_register', 'theme_footer_customizer');
+function theme_footer_customizer($wp_customize){
+
+    // Get upload directory
+    $upload_dir = wp_get_upload_dir();
+ 
+    // Create directories if they dot exist
+    if( ! file_exists( $style_file_path ) ) {
+        wp_mkdir_p( $style_file_path );
+    }
+
+    // Sanitize contents ( probably needs to be sanitized better, maybe with a CSS specific library )
+    $contents = wp_filter_nohtml_kses( wp_strip_all_tags( wp_get_custom_css() ) );
+
+    // Replace the contents of the file with the new saved contents.
+    $style_file = $style_file_path . '/custom.css';
+    file_put_contents( $style_file, $contents );
+
+}
+remove_action( 'wp_head', 'wp_custom_css_cb', 101 );
+// /*  Enqueues the external CSS file */
+add_action( 'wp_enqueue_scripts', 'custom_external_styles' );
+function custom_external_styles() {
+    $upload_dir = wp_get_upload_dir();
+    wp_register_style( 'custom-css', sprintf( '%1$s/css', untrailingslashit( $upload_dir['baseurl'] ) )  .'/custom.css' );
+    wp_enqueue_style( 'custom-css' );
+}
