@@ -1,0 +1,32 @@
+<?php //echo get_the_ID(); 
+$terms = get_the_terms( get_the_ID(), 'product_cat' );
+foreach ($terms as $term) {
+    $product_cat_id = $term->term_id;
+    break;
+}
+echo $product_cat_id;
+
+?>
+
+<?php
+$args = array(  
+    'post_type' => 'product',
+    'tax_query' => [
+        [
+            'taxonomy' => 'product_cat',
+            'terms' => $product_cat_id,
+            'include_children' => false // Remove if you need posts from term 7 child terms
+        ],
+    ],
+    );
+
+    $loop = new WP_Query( $args ); 
+    // print_r($loop);
+        ?>
+        
+        <?php   while ( $loop->have_posts() ) : $loop->the_post(); ?>     
+        
+        
+        
+        <?php   endwhile;
+                   wp_reset_postdata();  ?> 
