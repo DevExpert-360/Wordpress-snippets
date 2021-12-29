@@ -1,0 +1,38 @@
+add_filter('admin_init', 'my_general_settings_register_fields');
+ 
+function my_general_settings_register_fields()
+{
+    register_setting('general', 'escrow_public_key', 'esc_attr');
+    add_settings_field('escrow_public_key', '<label for="escrow_public_key">'.__('Public Key' , 'escrow_public_key' ).'</label>' , 'escrow_public_key', 'general');
+    register_setting('general', 'escrow_private_key', 'esc_attr');
+    add_settings_field('escrow_private_key', '<label for="escrow_private_key">'.__('Private Key' , 'escrow_private_key' ).'</label>' , 'escrow_private_key', 'general');
+    // EBST
+    register_setting('general', 'escrow_ebst_public_key', 'esc_attr');
+    add_settings_field('escrow_ebst_public_key', '<label for="escrow_ebst_public_key">'.__('EBST Public Key' , 'escrow_ebst_public_key' ).'</label>' , 'escrow_ebst_public_key', 'general');
+    register_setting('general', 'escrow_ebst_private_key', 'esc_attr');
+    add_settings_field('escrow_ebst_private_key', '<label for="escrow_ebst_private_key">'.__('EBST Private Key' , 'escrow_ebst_private_key' ).'</label>' , 'escrow_ebst_private_key', 'general');
+    
+}
+ 
+function escrow_public_key()
+{
+    
+   $value = get_option( 'escrow_public_key', '' );
+    echo '<input type="text" id="escrow_private_key" name="escrow_private_key" value="' . $value . '" />';
+}
+function escrow_private_key()
+{
+    $value = get_option( 'escrow_private_key', '' );
+    echo '<input type="text" id="escrow_public_key" name="escrow_public_key" value="' . $value . '" />';
+}
+function escrow_ebst_public_key()
+{
+    
+   $value = get_option( 'escrow_ebst_public_key', '' );
+    echo '<input type="text" id="escrow_ebst_private_key" name="escrow_ebst_private_key" value="' . $value . '" />';
+}
+function escrow_ebst_private_key()
+{
+    $value = get_option( 'escrow_ebst_private_key', '' );
+    echo '<input type="text" id="escrow_ebst_public_key" name="escrow_ebst_public_key" value="' . $value . '" />';
+}
