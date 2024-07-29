@@ -1,1 +1,499 @@
 
+
+// add_shortcode('multi_step_form_shortcode', 'multi_step_form');
+function multi_step_form() {
+    ?>
+    <div id="greentec-multistep-form" class="container">
+        <form id="form" class="form">
+            <div class="form-step form-step-active form-step1" data-id="1">
+                <div class="gt-inner-container">
+                    <div class="form-step-title">
+                        <h3>Hvad er jeres forbrugsmønster.</h3>
+                        <p>Venligst del lidt om jeres forbrugsmønster, så vi kan skræddersy vores anbefalinger til jeres behov. Din primære forbrugskategori ville være en god start.</p>
+                    </div>
+                    <div class="form-checkbox-group">
+                        <div class="form-checkbox">
+                            <input type="radio" id="checkbox_1" name="roof_type" value="Jeg har tegltag">
+                            <label for="checkbox_1">Jeg har tegltag</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="radio" id="checkbox_2" name="roof_type" value="Jeg har eternittag og lign.">
+                            <label for="checkbox_2">Jeg har eternittag og lign.</label>
+                        </div>
+                    </div>
+
+                    <div class="form-radio-group">
+                        <div class="form-radio">
+                            <input type="radio" id="radio_1" name="radio_1" value="Nord">
+                            <label for="radio_1">Nord</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_2" name="radio_1" value="Syd">
+                            <label for="radio_2">Syd</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_3" name="radio_1" value="Øst">
+                            <label for="radio_3">Øst</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_4" name="radio_1" value="Øst/vest">
+                            <label for="radio_4">Øst/vest</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_5" name="radio_1" value="Syd/vest">
+                            <label for="radio_5">Syd/vest</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_6" name="radio_1" value="Syd/øst">
+                            <label for="radio_6">Syd/øst</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_7" name="radio_1" value="Fladt tag">
+                            <label for="radio_7">Fladt tag</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group">
+                    <button type="button" class="btn btn-next">Næste step</button>
+                </div>
+            </div>
+
+            <div class="form-step form-step2" data-id="2">
+                <div class="gt-inner-container">
+                    <div class="form-step-title">
+                        <h3>Hvad er jeres forbrugsmønster.</h3>
+                        <p>Venligst del lidt om jeres forbrugsmønster, så vi kan skræddersy vores anbefalinger til jeres behov. Din primære forbrugskategori ville være en god start.</p>
+                    </div>
+                    <div class="form-radio-group">
+                        <div class="form-radio">
+                            <input type="radio" id="radio_8" name="radio_2" value="Morgen/aften">
+                            <label for="radio_8">Morgen/aften</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_9" name="radio_2" value="Dagtimer">
+                            <label for="radio_9">Dagtimer</label>
+                        </div>
+                        <div class="form-radio">
+                            <input type="radio" id="radio_10" name="radio_2" value="Hele dagen">
+                            <label for="radio_10">Hele dagen</label>
+                        </div>
+                    </div>
+                    <div class="form-checkbox-group">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="checkbox_3" name="future_plan[]" value="Vi har en elbil eller hybrid bil">
+                            <label for="checkbox_3">Vi har en elbil eller hybrid bil</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="checkbox_4" name="future_plan[]" value="Vi har allerede en varmepumpe">
+                            <label for="checkbox_4">Vi har allerede en varmepumpe</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="checkbox_5" name="future_plan[]" value="Vi planlægger at få en elbil eller hybrid bil">
+                            <label for="checkbox_5">Vi planlægger at få en elbil eller hybrid bil</label>
+                        </div>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="checkbox_6" name="future_plan[]" value="Vi planlægger at få en varmepumpe">
+                            <label for="checkbox_6">Vi planlægger at få en varmepumpe</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group">
+                    <button type="button" class="btn btn-prev">Gå et step tilbage</button>
+                    <button type="button" class="btn btn-next">Næste step</button>
+                </div>
+            </div>
+
+            <div class="form-step form-step3" data-id="3">
+                <div class="gt-inner-container">
+                    <div class="form-step-title">
+                        <h3>Dimensionering af anlæg.</h3>
+                        <p>Venligst oplys os om jeres årlige elforbrug i kWh (kilowatttimer) samt størrelsen på jeres hus, så vi kan dimensionere anlægget præcist efter jeres behov.</p>
+                    </div>
+                    <div class="form-range-group">
+                        <div class="form-range">
+                            <label for="kilowat">Angiv dit årlige KWh forbrug:<span class="range-points">0 kWh</span></label>
+                            <input type="range" id="kilowat" name="kilowat" min="0" max="14000" value="0">
+                        </div>
+                        <div class="form-range">
+                            <label for="measure">Angiv grundarealet på dit hus:<span class="range-points">0 m2</span></label>
+                            <input type="range" id="measure" name="measure" min="0" max="14000" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="btns-group">
+                    <button type="button" class="btn btn-prev">Gå et step tilbage</button>
+                    <button type="button" class="btn btn-next">Næste step</button>
+                </div>
+            </div>
+
+            <div class="form-step form-step4" data-id="4">
+                <div class="gt-inner-container">
+                    <div class="form-step-title">
+                        <h3>Så er dit solcelle tilbud klar!</h3>
+                        <p>Udfyld dine kontakt oplysninger og få sendt dit tilbud direkte til din e-mail, så du nemt kan få adgang til det igen.</p>
+                    </div>
+                    <div class="form-field-group">
+                        <div class="form-field">
+                            <input type="text" id="fname" name="fname" placeholder="Fornavn..." />
+                            <input type="text" id="lname" name="lname" placeholder="Efternavn..." />
+                            <input type="email" id="email" name="email" placeholder="Email..." />
+                            <input type="tel" id="tel" name="tel" placeholder="Telefon..." />
+                            <button type="submit" class="btn">Se dit tilbud</button>
+                        </div>
+                        <p class="gt-terms-conditions">Du tilmelder dig automatisk til at blive kontaktet via email og telefon, og du giver samtidig samtykke til at modtage relevant markedsføring fremover*</p>
+                    </div>
+                </div>
+                <div class="btns-group">
+                    <button type="button" class="btn btn-prev">Gå et step tilbage</button>
+                </div>
+            </div>
+        </form>
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            <div class="progress-step progress-step-active" data-title="Step 1"></div>
+            <div class="progress-step" data-title="Step 2"></div>
+            <div class="progress-step" data-title="Step 3"></div>
+            <div class="progress-step" data-title="Step 4"></div>
+        </div>
+    </div>
+    <div class="gt-popup-multistep" id="gt-popup-multistep">
+        <img src="../wp-content/uploads/2024/06/Group-1000001696.png" class="img-responsive" />
+        <h3>Dit <span>gratis</span> tilbud er sendt til din mail!</h3>
+        <p>Vi har ud fra dine oplysninger og igennem vores prisberegner sammensat et tilbud ud fra dine behov! Den burde lande i din indbakke inde længe. Vær opmærksom på den godt kan være landet i din spam mappe.</p>
+        <p>Skulle du have spørgsmål sidder vi Greentec Energy altid klar til at hjælpe, du kan fange os på tlf. <a href="tel:70 30 54 00">70 30 54 00</a> eller på mail <a href="mailto:info@greentec-energy.dk">info@greentec-energy.dk</a>.</p>
+    </div>
+
+    <div class="overlay-gf" style="display:none;">
+        <div class="popup-gf">
+            <button class="popup-gf__close-gf" onclick="closePopup()">×</button>
+            <h1 class="popup-gf__header-gf">
+                <img src="../wp-content/uploads/2024/07/Group-1000001696.svg" class="img-responsive" />
+                Dit <span style="color: #a3d400;">gratis</span> tilbud er sendt til din mail!</h1>
+            <p class="popup-gf__message-gf">
+                Vi har ud fra dine oplysninger og igennem vores prisberegner sammensat et tilbud ud fra dine behov! 
+                Den burde lande i din indbakke inde længe. Vær opmærksom på den godt kan være landet i din spam mappe. 
+                Skulle du have spørgsmål sidder vi Greentec Energy altid klar til at hjælpe, du kan fange os på tlf. 
+                <a class="popup-gf__link-gf" href="tel:70305400">70 30 54 00</a> eller på mail 
+                <a class="popup-gf__link-gf" href="mailto:info@greentec-energy.dk">info@greentec-energy.dk</a>.
+            </p>
+        </div>
+    </div>
+    <?php
+}
+
+add_shortcode('multi_step_form_shortcode', 'multi_step_form');
+
+function multi_step_form_js(){
+    ?>
+<script>
+async function getLeadLabels(apiToken) {
+    const response = await fetch(`https://greentecenergy.pipedrive.com/api/v1/leadLabels?api_token=${apiToken}`);
+    if (!response.ok) {
+        throw new Error('Failed to fetch lead labels');
+    }
+    const data = await response.json();
+    return data.data;
+}
+
+async function createLabelMapping(apiToken) {
+    const leadLabels = await getLeadLabels(apiToken);
+    const labelMapping = {};
+
+    leadLabels.forEach(label => {
+        labelMapping[label.name] = label.id;
+    });
+
+    console.log('Label Mapping:', labelMapping); // Debug: Log label mapping
+
+    return labelMapping;
+}
+
+async function createPerson(formData) {
+    const personData = {
+        name: formData['3aa931ef8d1df41836da63d50b19a93ece961ba4'],
+        email: formData.email,
+        phone: formData.phone
+    };
+
+    try {
+        const response = await fetch('https://greentecenergy.pipedrive.com/api/v1/persons?api_token=25f562d3530608509f2c4f08e3dd10b7eda91c2e', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(personData),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            return data.data.id;
+        } else {
+            const errorData = await response.json();
+            console.error('Failed to create person:', errorData);
+            alert('Failed to create person');
+            return null;
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error creating person');
+        return null;
+    }
+}
+
+function getLabelForKilowat(kilowat, roofType, labelMapping) {
+    let label = '';
+    if (roofType === 'Jeg har tegltag') {
+        if (kilowat >= 0 && kilowat <= 5000) label = 'OfferA1';
+        if (kilowat >= 5001 && kilowat <= 6000) label = 'OfferA2';
+        if (kilowat >= 6001 && kilowat <= 7000) label = 'OfferA3';
+        if (kilowat >= 7001 && kilowat <= 8000) label = 'OfferA4';
+        if (kilowat >= 8001 && kilowat <= 9000) label = 'OfferA5';
+        if (kilowat >= 9001 && kilowat <= 10000) label = 'OfferA6';
+        if (kilowat >= 10001 && kilowat <= 11000) label = 'OfferA7';
+        if (kilowat >= 11001 && kilowat <= 12000) label = 'OfferA8';
+        if (kilowat >= 12001 && kilowat <= 13000) label = 'OfferA9';
+        if (kilowat >= 13001 && kilowat <= 14000) label = 'OfferA10';
+        if (kilowat > 14000) label = 'Kontakt';
+    } else {
+        if (kilowat >= 5001 && kilowat <= 6000) label = 'OfferB2';
+        if (kilowat >= 6001 && kilowat <= 7000) label = 'OfferB3';
+        if (kilowat >= 7001 && kilowat <= 8000) label = 'OfferB4';
+        if (kilowat >= 8001 && kilowat <= 9000) label = 'OfferB5';
+        if (kilowat >= 9001 && kilowat <= 10000) label = 'OfferB6';
+        if (kilowat >= 10001 && kilowat <= 11000) label = 'OfferB7';
+        if (kilowat >= 11001 && kilowat <= 12000) label = 'OfferB8';
+        if (kilowat >= 12001 && kilowat <= 13000) label = 'OfferB9';
+        if (kilowat >= 13001 && kilowat <= 14000) label = 'OfferB10';
+        if (kilowat > 14000) label = 'KontBkt';
+    }
+
+    console.log('Selected Label:', label); // Debug: Log selected label
+
+    return labelMapping[label] || ''; // Return the GUID or an empty string if not found
+}
+
+async function createLead(formData, personId, labelMapping) {
+    const roofType = formData.roof_type;
+    const kilowat = Number(formData.annual_consumption);
+    const labelId = getLabelForKilowat(kilowat, roofType, labelMapping); // Ensure this returns a valid GUID
+
+    if (!labelId) {
+        alert('Label ID is not found for the given data. Please check the form inputs.');
+        return;
+    }
+
+    console.log('Lead Data:', {
+        title: formData['3aa931ef8d1df41836da63d50b19a93ece961ba4'],
+        person_id: personId,
+        house_size: formData.house_size.toString(),
+        annual_consumption: formData.annual_consumption.toString(),
+        appliance_consumption: formData.appliance_consumption.join(', '),
+        timing_consumption: formData.timing_consumption,
+        roof_type: formData.roof_type,
+        roof_direction: formData.roof_direction,
+        label_ids: [labelId]
+    }); // Debug: Log lead data
+
+    const leadData = {
+        title: formData['3aa931ef8d1df41836da63d50b19a93ece961ba4'],
+        person_id: personId,
+        'd07655d3524d56ed0d94dc3abd3b99be353c088c': formData.house_size.toString(),
+        'd885abf34dc4c04931e238f10d5b3bd9a40b104e': formData.annual_consumption.toString(),
+        '658a22d1c0f43c3dd4790acd163c7b4afe50612e': formData.appliance_consumption.join(', '), // Join checkbox values with a comma
+        'b757d2b9f31598395912a6300f16d7b254aaa0a5': formData.timing_consumption,
+        'bf8a4e014795edcd8bcfddc4f4af9c8973c6e559': formData.roof_type,
+        'ac027256bbc98f18e1a4dcd20504c3897fc7601b': formData.roof_direction,
+        label_ids: [labelId]
+    };
+
+    try {
+        const response = await fetch('https://greentecenergy.pipedrive.com/api/v1/leads?api_token=25f562d3530608509f2c4f08e3dd10b7eda91c2e', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(leadData),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            
+            if (labelId === labelMapping['Kontakt'] || labelId === labelMapping['KontBkt']) { // Corrected to check the GUID for 'Kontakt' or 'KontBkt'
+                window.location.href = 'your-contact-page-url'; // Redirect to contact page
+            } else {
+                document.getElementById('form').reset();
+                showPopup();
+            }
+        } else {
+            const errorData = await response.json();
+            console.error('Failed to create lead:', errorData);
+            alert('Failed to create lead');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error creating lead');
+    }
+}
+
+function showPopup() {
+    document.querySelector('.overlay-gf').style.display = 'flex';
+}
+
+function closePopup() {
+    document.querySelector('.overlay-gf').style.display = 'none';
+}
+
+document.getElementById('form').addEventListener('submit', async (event) => {
+    event.preventDefault(); // Prevent default form submission
+
+    const formData = {
+        "3aa931ef8d1df41836da63d50b19a93ece961ba4": document.getElementById('fname').value + ' ' + document.getElementById('lname').value, // Name field key
+        email: document.getElementById('email').value,
+        phone: document.getElementById('tel').value,
+        house_size: document.getElementById('measure').value,
+        annual_consumption: document.getElementById('kilowat').value,
+        appliance_consumption: Array.from(document.querySelectorAll('input[name="future_plan[]"]:checked')).map(el => el.value), // Collect checkbox values
+        timing_consumption: document.querySelector('input[name="radio_2"]:checked').value,
+        roof_type: document.querySelector('input[name="roof_type"]:checked').value,
+        roof_direction: document.querySelector('input[name="radio_1"]:checked').value
+    };
+
+    console.log('Form Data:', formData); // Debug: Log form data
+
+    const personId = await createPerson(formData);
+
+    if (personId) {
+        const apiToken = '25f562d3530608509f2c4f08e3dd10b7eda91c2e'; // Your API token
+        const labelMapping = await createLabelMapping(apiToken);
+        await createLead(formData, personId, labelMapping);
+    }
+});
+
+const formSteps = document.querySelectorAll('.form-step');
+
+if (formSteps) {
+    const progress = document.getElementById('progress');
+    const progressSteps = document.querySelectorAll('.progress-step');
+    const btnNext = document.querySelectorAll('.btn-next');
+    const btnPrev = document.querySelectorAll('.btn-prev');
+
+    let formStepsNum = 0;
+
+    btnNext.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const parent = e.target.closest(".form-step");
+            const inputs_container = parent.querySelector(".gt-inner-container");
+
+            // Remove existing validation messages
+            inputs_container.querySelectorAll('.validation-message').forEach(msg => msg.remove());
+
+            if (parent.dataset.id == 1 || parent.dataset.id == 2) {
+                const checkboxes = inputs_container.querySelectorAll(
+                    ".form-checkbox-group input"
+                );
+                const radios = inputs_container.querySelectorAll(
+                    ".form-radio-group input"
+                );
+
+                let valid = true;
+
+                if (!radio_check(checkboxes)) {
+                    valid = false;
+                    showError(inputs_container.querySelector('.form-checkbox-group'), "Please make sure to select at least one option in this group.");
+                }
+
+                if (!radio_check(radios)) {
+                    valid = false;
+                    showError(inputs_container.querySelector('.form-radio-group'), "Please make sure to select at least one option in this group.");
+                }
+
+                if (!valid) {
+                    e.preventDefault();
+                    return;
+                }
+            } else if (parent.dataset.id == 3) {
+                const range_inputs = inputs_container.querySelectorAll(
+                    ".form-range-group input"
+                );
+
+                // Check if any range input has a value less than 1
+                if (Array.from(range_inputs).some((input) => input.value < 1)) {
+                    showError(inputs_container.querySelector('.form-range-group'), "Please enter a valid value greater than 0.");
+                    e.preventDefault();
+                    return;
+                }
+            }
+
+            formStepsNum++;
+            updateFormSteps();
+            updateProgressbar();
+        });
+    });
+
+    btnPrev.forEach(btn => {
+        btn.addEventListener('click', () => {
+            formStepsNum--;
+            updateFormSteps();
+            updateProgressbar();
+        });
+    });
+    
+    function updateFormSteps() {
+        formSteps.forEach((formStep, index) => {
+            if (index === formStepsNum) {
+                formStep.classList.add('form-step-active');
+            } else {
+                formStep.classList.remove('form-step-active');
+            }
+        });
+    }
+
+    function updateProgressbar() {
+        progressSteps.forEach((progressStep, index) => {
+            if (index <= formStepsNum) {
+                progressStep.classList.add('progress-step-active');
+            } else {
+                progressStep.classList.remove('progress-step-active');
+            }
+        });
+
+        const progressActive = document.querySelectorAll('.progress-step-active');
+        progress.style.width = ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + '%';
+    }
+
+    function radio_check(fields) {
+        return Array.from(fields).some(field => field.checked);
+    }
+
+    function showError(container, message) {
+        const errorElement = document.createElement('div');
+        errorElement.classList.add('validation-message');
+        errorElement.style.color = 'red';
+        errorElement.textContent = message;
+        container.appendChild(errorElement);
+    }
+    
+    const measure_mt = document.querySelector('#measure');
+    const kilowat_mt = document.querySelector('#kilowat');
+
+    if (measure_mt) {
+        measure_mt.addEventListener('input', (e) => {
+            const parent = e.target.closest('.form-range').querySelector('.range-points');
+            parent.innerText = e.target.value + " m2";
+        });
+    }
+
+    if (kilowat_mt) {
+        kilowat_mt.addEventListener('input', (e) => {
+            const parent = e.target.closest('.form-range').querySelector('.range-points');
+            parent.innerText = e.target.value + " kWh";
+        });
+    }
+}
+
+
+</script>
+    <?php
+}
+
+add_action('wp_footer', 'multi_step_form_js');
